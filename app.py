@@ -26,12 +26,14 @@ with st.form("Base"):
   enviar = st.form_submit_button("Criar Base CSV")
 
 if enviar:
+  seq_list = [s.strip() for s in seqproduto_str.split(",") if s.strip() != ""]
+  
   lojas_final = lojas if lojas else seleciona_lojas
   
   dados = {
-    "SEQPRODUTO":[seqproduto],
-    "LOJAS":[lojas_final],
-    "STATUSVENDA":[opcao]
+    "SEQPRODUTO":seq_list,
+    "LOJAS":[lojas_final]*len(seq_list),
+    "STATUSVENDA":[opcao]*len(seq_list)
   }
 
   csv = pd.DataFrame(dados)
