@@ -26,7 +26,7 @@ with st.form("Base"):
   enviar = st.form_submit_button("Criar Base CSV")
 
 if enviar:
-  seq_list = [s.strip() for s in seqproduto_str.split(",") if s.strip() != ""]
+  seq_list = [s.strip() for s in seqproduto.split(",") if s.strip() != ""]
   
   lojas_final = lojas if lojas else seleciona_lojas
   
