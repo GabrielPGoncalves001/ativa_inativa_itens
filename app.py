@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
+from datetime import datetime
 
-
+agora = datetime.now().strftime('%d%m%Y %H:%M')
 st.title("Base Ativar/Inativar Itens")
-
 
   
 seqproduto = st.text_input("SEQPRODUTO")
@@ -27,7 +27,9 @@ if seleciona_lojas == "LOJAS ESPECÍFICAS":
 opcao = st.selectbox("Selecione a opção", ["ATIVAR","INATIVAR"])
 
 
-if st.button("Gerar Base CSV"):
+if st.button("SALVAR"):
+  
+  st.write(f'Base Salva em: {agora}')  
   seq_list = [s.strip() for s in seqproduto.split(",") if s.strip() != ""]
   
   lojas_final = lojas if lojas else seleciona_lojas
