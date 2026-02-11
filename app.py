@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-agora = datetime.now().strftime('%d%m%Y %H:%M')
+agora = datetime.now().strftime('%d/%m/%Y %H:%M')
 st.title("Base Ativar/Inativar Itens")
 
   
