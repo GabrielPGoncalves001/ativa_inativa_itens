@@ -54,8 +54,8 @@ if st.button("SALVAR"):
   
   dados = {
     "SEQPRODUTO":seqproduto_list,
-    "LOJAS":[lojas_final]*len(seq_list),
-    "STATUSCOMPRA":[opcao]*len(seq_list),
+    "LOJAS":[lojas_final]*len(seqproduto_list),
+    "STATUSCOMPRA":[opcao]*len(seqproduto_list),
     "STATUSVENDA":"A"
   }
   
