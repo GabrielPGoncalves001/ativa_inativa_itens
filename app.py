@@ -26,6 +26,8 @@ with st.form("Base"):
   enviar = st.form_submit_button("Criar Base CSV")
 
 if enviar:
+  lojas_final = lojas if lojas else seleciona_lojas
+  
   dados = {
     "SEQPRODUTO":[seqproduto],
     "LOJAS":[lojas],
@@ -34,7 +36,7 @@ if enviar:
 
   csv = pd.DataFrame(dados)
 
-  csv_bytes = csv.to_csv(index=False).encode("utf=8")
+  csv_bytes = csv.to_csv(index=False, sep=';').encode("utf=8")
   st.download_button(
     label="Clique aqui para baixar o csv",
     data=csv_bytes,
