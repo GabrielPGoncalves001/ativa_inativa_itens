@@ -59,10 +59,7 @@ if st.button("SALVAR"):
     "STATUSVENDA":"A"
   })
   
-  df_dados = df_final
-  
-  df_final = df_final[['SEQPRODUTO','DESCCOMPLETA','LOJAS','STATUSCOMPRA','STATUSVENDA']]
-  csv_bytes = df_final.to_csv(sep=';',encoding='utf-8',index=False).encode()
+  csv_bytes = df_dados.to_csv(sep=';',encoding='utf-8',index=False).encode()
   st.download_button(
     label="Clique aqui para baixar o csv",
     data=csv_bytes,
