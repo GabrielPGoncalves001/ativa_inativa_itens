@@ -5,6 +5,20 @@ from datetime import datetime
 agora = datetime.now().strftime('%d/%m/%Y %H:%M')
 st.title("Base Ativar/Inativar Itens")
 
+df_base_import = pd.DataFrame(columns=['SEQPRODUTO'])
+csv_import = df_base_import.to_csv(sep=';',
+                                   index=False,
+                                   encoding='utf-8').encode()
+
+st.download_button(
+  label="Clique aqui para baixar a base para importar os códigos",
+  data=csv_import,
+  file_name="Base Import Ativa-Inativa",
+  mime="text/csv"
+)
+
+arquivo = st.file_uploader("Importe uma planilha csv", type="csv")
+
 seqproduto = st.text_input("SEQPRODUTO")
 seleciona_lojas = st.selectbox("Opções",
              ["TODAS LOJAS (ATACADO/VAREJO)",
