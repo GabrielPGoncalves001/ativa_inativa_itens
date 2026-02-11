@@ -30,7 +30,7 @@ if enviar:
   
   dados = {
     "SEQPRODUTO":[seqproduto],
-    "LOJAS":[lojas],
+    "LOJAS":[lojas_final],
     "STATUSVENDA":[opcao]
   }
 
