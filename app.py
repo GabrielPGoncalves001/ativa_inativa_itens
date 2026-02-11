@@ -22,7 +22,7 @@ arquivo = st.file_uploader("Importe a base com os seqprodutos", type="csv")
 if arquivo:
   df_upload = pd.read_csv(arquivo,
                           index_col=False,
-                          encoding='utf-8",
+                          encoding="utf-8",
                           sep=';')
   st.sucess('Arquivo importado com sucesso')
 
