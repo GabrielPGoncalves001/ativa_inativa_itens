@@ -24,7 +24,7 @@ if arquivo:
                           index_col=False,
                           encoding="utf-8",
                           sep=';')
-  st.sucess('Arquivo importado com sucesso')
+  st.success('Arquivo importado com sucesso')
 
   if 'SEQPRODUTO' not in df_upload.columns:
     st.error('A base precisa conter a coluna de seqproduto')
