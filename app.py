@@ -5,11 +5,15 @@ from datetime import datetime
 agora = datetime.now().strftime('%d/%m/%Y %H:%M')
 st.title("Base Ativar/Inativar Itens")
 
+imagem = "https://github.com/GabrielPGoncalves001/ativa_inativa_itens/blob/main/imagem_tutorial.png"
+if st.button("Como utilizar a aplicação"):
+    st.image(imagem, caption="Tutorial", use_column_width=True)
+
 df_base_import = pd.DataFrame(columns=['SEQPRODUTO'])
 csv_import = df_base_import.to_csv(sep=';',
                                    index=False,
                                    encoding='utf-8').encode()
-st.button("Clique aqui para entender como usar a interface"r)
+
 
 st.download_button(
   label="Clique aqui para baixar a base para importar os códigos",
