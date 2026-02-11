@@ -13,7 +13,7 @@ csv_import = df_base_import.to_csv(sep=';',
 st.download_button(
   label="Clique aqui para baixar a base para importar os códigos",
   data=csv_import,
-  file_name="Base Import Ativa-Inativa",
+  file_name="Base Import Ativa-Inativa.csv",
   mime="text/csv"
 )
 
