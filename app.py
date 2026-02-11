@@ -19,6 +19,19 @@ st.download_button(
 
 arquivo = st.file_uploader("Importe a base com os seqprodutos", type="csv")
 
+if arquivo:
+  df_upload = pd.read_csv(arquivo,
+                          index_col=False,
+                          encoding='utf-8",
+                          sep=';')
+  st.sucess('Arquivo importado com sucesso')
+
+  if 'SEQPRODUTO' not in df_upload.columns:
+    st.error('A base precisa conter a coluna de seqproduto')
+  else:
+    seqproduto_list = df_upload['SEQPRODUTO'].tolist()
+    st.write("Foram encontrados", len(seqproduto_list), "códigos.")
+
 seleciona_lojas = st.selectbox("Opções",
              ["TODAS LOJAS (ATACADO/VAREJO)",
               "SOMENTE ATACADO","SOMENTE VAREJO",
@@ -55,9 +68,3 @@ if st.button("SALVAR"):
     file_name="base_ativa_inativa.csv",
     mime="text/csv"
   )
-                                             
-                                             
-  
-  
-  
-  
