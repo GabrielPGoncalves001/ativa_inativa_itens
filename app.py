@@ -18,7 +18,7 @@ st.download_button(
 )
 
 arquivo = st.file_uploader("Importe a base com os seqprodutos", type="csv")
-
+seqproduto_list = []
 if arquivo:
   df_upload = pd.read_csv(arquivo,
                           index_col=False,
