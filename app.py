@@ -17,9 +17,8 @@ st.download_button(
   mime="text/csv"
 )
 
-arquivo = st.file_uploader("Importe uma planilha csv", type="csv")
+arquivo = st.file_uploader("Importe a base com os seqprodutos", type="csv")
 
-seqproduto = st.text_input("SEQPRODUTO")
 seleciona_lojas = st.selectbox("Opções",
              ["TODAS LOJAS (ATACADO/VAREJO)",
               "SOMENTE ATACADO","SOMENTE VAREJO",
