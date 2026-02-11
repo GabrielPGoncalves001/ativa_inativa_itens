@@ -48,12 +48,12 @@ opcao = st.selectbox("Selecione a opção", ["ATIVAR","INATIVAR"])
 
 if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
-  seq_list = [s.strip() for s in seqproduto.split(",") if s.strip() != ""]
+  #seq_list = [s.strip() for s in seqproduto_list.split(",") if s.strip() != ""]
   
   lojas_final = lojas if lojas else seleciona_lojas
   
   dados = {
-    "SEQPRODUTO":seq_list,
+    "SEQPRODUTO":seqproduto_list,
     "LOJAS":[lojas_final]*len(seq_list),
     "STATUSCOMPRA":[opcao]*len(seq_list),
     "STATUSVENDA":"A"
