@@ -55,20 +55,21 @@ if st.button("SALVAR"):
   
   lojas_final = lojas if lojas else seleciona_lojas
   
-  dados = {
+  df_dados = pd.DataFrame({
     "SEQPRODUTO":seqproduto_list,
     "LOJAS":[lojas_final]*len(seqproduto_list),
     "STATUSCOMPRA":[opcao]*len(seqproduto_list),
     "STATUSVENDA":"A"
-  }
+  })
   
-  csv = pd.DataFrame(dados)
-
-  csv_bytes = csv.to_csv(index=False, sep=';').encode("utf=8")
-  csv_bytes = pd.merge(df_mapa['SEQPRODUTO','DESCCOMPLETA'],
-                       on='SEQPRODUTO',
-                       how='left')
-  csv_bytes = csv_bytes[['SEQPRODUTO','DESCCOMPLETA','LOJAS','STATUSCOMPRA','STATUSVENDA']]
+  df_final = pd.merge(
+    df_dados,
+    df_mapa[['SEQPRODUTO','DESCCOMPLETA']],
+    on='SEQPRODUTO',
+    how='left')
+  
+  df_final = df_final[['SEQPRODUTO','DESCCOMPLETA','LOJAS','STATUSCOMPRA','STATUSVENDA']]
+  csv_bytes = df_final.to_csv(sep=';',encoding='utf-8',index=False).encode()
   st.download_button(
     label="Clique aqui para baixar o csv",
     data=csv_bytes,
