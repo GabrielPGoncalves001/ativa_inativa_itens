@@ -13,7 +13,7 @@ with st.form("Base"):
                 "SOMENTE ATACADO","SOMENTE VAREJO",
                 "LOJAS ESPECÍFICAS"])
   
-  opcao = st.selectbox("Selecione a opção", ["ATIVAR","INATIVAR"])
+  
   
   lojas = None
   
@@ -23,6 +23,8 @@ with st.form("Base"):
                           "27","28","29","30","31","32","33","34","35","41","43","44","45",
                           "47","48","50","51","53","54","55","56","57","58","201","202","203",
                           "204"])
+
+  opcao = st.selectbox("Selecione a opção", ["ATIVAR","INATIVAR"])
   enviar = st.form_submit_button("Criar Base CSV")
 
 if enviar:
