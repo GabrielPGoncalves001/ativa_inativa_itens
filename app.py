@@ -1,6 +1,5 @@
 import streamlit as st
 
-st.title("Formulário Teste")
+st.title("Base Ativar/Inativar Itens")
 
-with st.form("formulário"):
-  a = st.text_input("kldjfg")
+st.selectbox("Opções",["TODAS LOJAS (ATACADO/VAREJO)","SOMENTE ATACADO","SOMENTE VAREJO","LOJAS ESPECÍFICAS"]
