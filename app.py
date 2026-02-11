@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-mapa = r'S:/price/mapa_sku/mapa_sku_prod.xlsx'
-df_mapa = pd.read_excel(mapa, index_col=False)
-
 agora = datetime.now().strftime('%d/%m/%Y %H:%M')
 st.title("Base Ativar/Inativar Itens")
 
@@ -62,11 +59,7 @@ if st.button("SALVAR"):
     "STATUSVENDA":"A"
   })
   
-  df_final = pd.merge(
-    df_dados,
-    df_mapa[['SEQPRODUTO','DESCCOMPLETA']],
-    on='SEQPRODUTO',
-    how='left')
+  df_dados = df_final
   
   df_final = df_final[['SEQPRODUTO','DESCCOMPLETA','LOJAS','STATUSCOMPRA','STATUSVENDA']]
   csv_bytes = df_final.to_csv(sep=';',encoding='utf-8',index=False).encode()
