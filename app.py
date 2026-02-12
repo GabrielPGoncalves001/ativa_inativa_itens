@@ -80,12 +80,6 @@ if st.button("SALVAR"):
   for p, l in itertools.product(seqproduto_list, lojas_final_list)
   ]
     
-  df_dados = pd.DataFrame({
-    "SEQPRODUTO":seqproduto_list,
-    "LOJAS":[",".join(lojas_final)] * len(seqproduto_list),
-    "STATUSCOMPRA":[opcao]*len(seqproduto_list),
-    "STATUSVENDA":["A"]*len(seqproduto_list)
-  })
   
   csv_bytes = df_dados.to_csv(sep=';',encoding='utf-8',index=False).encode()
   st.download_button(
