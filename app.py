@@ -77,7 +77,7 @@ if st.button("SALVAR"):
   else:
       opcao_formatada_compra = "N"
       
-   if opcao_venda == "ATIVAR":
+  if opcao_venda == "ATIVAR":
       opcao_formatada_venda = "A"
   elif opcao_venda == "INATIVAR":
       opcao_formatada_venda = "I"
