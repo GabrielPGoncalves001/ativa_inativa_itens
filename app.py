@@ -60,12 +60,13 @@ elif seleciona_lojas == "SOMENTE VAREJO":
     lojas = ["1","3","5","7","9","11","12","13","14","15","16","19","25","26",
             "27","28","29","30","31","32","33","34","35","41","43","44","45",
             "47","48","50","51","53","54","55","56","57","58"]
+else:
+    lojas = ["201","202","203","204"]
   
 opcao = st.selectbox("Selecione a opção", ["ATIVAR","INATIVAR"])
 
 if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
-  #seq_list = [s.strip() for s in seqproduto_list.split(",") if s.strip() != ""]
   
   lojas_final = lojas if lojas else seleciona_lojas
   
