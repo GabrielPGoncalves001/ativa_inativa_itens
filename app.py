@@ -64,14 +64,26 @@ elif seleciona_lojas == "SOMENTE VAREJO":
 else:
     lojas = ["201","202","203","204"]
   
-opcao_compra = st.selectbox("Selecione o STATUSCOMPRA", ["ATIVAR","INATIVAR"])
-opcao_venda = st.selectbox("Selecione o STATUSVENDA",["ATIVAR","INATIVAR"])
+opcao_compra = st.selectbox("Selecione o STATUSCOMPRA", ["ATIVAR","INATIVAR","NÃO ALTERAR"])
+opcao_venda = st.selectbox("Selecione o STATUSVENDA",["ATIVAR","INATIVAR","NÃO ALTERAR"])
 
 if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
 
-  opcao_formatada_compra = "A" if opcao_compra == "ATIVAR" else "I"  
-  opcao_formatada_venda = "A" if opcao_venda == "ATIVAR" else "I"
+  if opcao_compra == "ATIVAR":
+      opcao_formatada_compra = "A"
+  elif opcao_compra == "INATIVAR":
+      opcao_formatada_compra = "I"
+  else:
+      opcao_formatada_compra = "N"
+      
+   if opcao_venda == "ATIVAR":
+      opcao_formatada_venda = "A"
+  elif opcao_venda == "INATIVAR":
+      opcao_formatada_venda = "I"
+  else:
+      opcao_formatada_venda = "N"
+      
   lojas_final = lojas if lojas else seleciona_lojas
   lojas_final_list = lojas if isinstance(lojas, list) else [lojas]
     
