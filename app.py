@@ -65,7 +65,7 @@ else:
     lojas = ["201","202","203","204"]
   
 opcao_compra = st.selectbox("Selecione o STATUSCOMPRA", ["ATIVAR","INATIVAR"])
-opcao_venda = st.select_box("Selecione o STATUSVENDA",["ATIVAR","INATIVAR"])
+opcao_venda = st.selectbox("Selecione o STATUSVENDA",["ATIVAR","INATIVAR"])
 
 if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
