@@ -91,7 +91,8 @@ if st.button("SALVAR"):
     {"SEQPRODUTO":p,
     "LOJAS":l,
     "STATUSCOMPRA":opcao_formatada_compra,
-    "STATUSVENDA":opcao_formatada_venda}
+    "STATUSVENDA":opcao_formatada_venda,
+    "NROSEGMENTO": 1 if int(l) =< 58 else 2}
   for p, l in itertools.product(seqproduto_list, lojas_final_list)
   ]
 
