@@ -3,9 +3,10 @@ import pandas as pd
 from datetime import datetime
 
 agora = datetime.now().strftime('%d/%m/%Y %H:%M')
+imagem = "https://github.com/GabrielPGoncalves001/ativa_inativa_itens/raw/main/imagem_repo_tutorial.png"
+
 st.title("Base Ativar/Inativar Itens")
 
-imagem = "https://github.com/GabrielPGoncalves001/ativa_inativa_itens/raw/main/imagem_repo_tutorial.png"
 if st.button("Como utilizar a aplicação"):
     st.image(imagem, caption="Tutorial", use_column_width=True)
 
