@@ -72,14 +72,15 @@ if st.button("SALVAR"):
   lojas_final = lojas if lojas else seleciona_lojas
   lojas_final_list = lojas if isinstance(lojas, list) else [lojas]
     
-  df_dados =[
+  dados =[
     {"SEQPRODUTO":p,
     "LOJAS":l,
     "STATUSCOMPRA":opcao,
     "STATUSVENDA":"A"}
   for p, l in itertools.product(seqproduto_list, lojas_final_list)
   ]
-    
+
+  df_dados = pd.DataFrame(dados)  
   
   csv_bytes = df_dados.to_csv(sep=';',encoding='utf-8',index=False).encode()
   st.download_button(
