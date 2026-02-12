@@ -64,21 +64,22 @@ elif seleciona_lojas == "SOMENTE VAREJO":
 else:
     lojas = ["201","202","203","204"]
   
-opcao = st.selectbox("Selecione a opção", ["ATIVAR","INATIVAR"])
+opcao_compra = st.selectbox("Selecione o STATUSCOMPRA", ["ATIVAR","INATIVAR"])
+opcao_venda = st.select_box("Selecione o STATUSVENDA",["ATIVAR","INATIVAR"])
 
 if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
 
-  opcao_formatada = "A" if opcao == "ATIVAR" else "I"  
-    
+  opcao_formatada_compra = "A" if opcao == "ATIVAR" else "I"  
+  opcao_formatada_venda = "A" if opcao == "ATIVAR" else "I"
   lojas_final = lojas if lojas else seleciona_lojas
   lojas_final_list = lojas if isinstance(lojas, list) else [lojas]
     
   dados =[
     {"SEQPRODUTO":p,
     "LOJAS":l,
-    "STATUSCOMPRA":"A" opcao_formatada,
-    "STATUSVENDA":"A"}
+    "STATUSCOMPRA":opcao_formatada_compra,
+    "STATUSVENDA":opcao_formatada_venda}
   for p, l in itertools.product(seqproduto_list, lojas_final_list)
   ]
 
