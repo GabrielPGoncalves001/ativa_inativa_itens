@@ -73,7 +73,7 @@ if st.button("SALVAR"):
   df_dados = pd.DataFrame({
     "SEQPRODUTO":seqproduto_list,
     "LOJAS":[",".join(lojas_final)] * len(seqproduto_list),
-    "STATUSCOMPRA":[]*len(seqproduto_list),
+    "STATUSCOMPRA":[opcao]*len(seqproduto_list),
     "STATUSVENDA":["A"]*len(seqproduto_list)
   })
   
