@@ -68,14 +68,16 @@ opcao = st.selectbox("Selecione a opção", ["ATIVAR","INATIVAR"])
 
 if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
-  
+
+  opcao_formatada = "A" if opcao == "ATIVAR" else "I"  
+    
   lojas_final = lojas if lojas else seleciona_lojas
   lojas_final_list = lojas if isinstance(lojas, list) else [lojas]
     
   dados =[
     {"SEQPRODUTO":p,
     "LOJAS":l,
-    "STATUSCOMPRA":opcao,
+    "STATUSCOMPRA":"A" opcao_formatada,
     "STATUSVENDA":"A"}
   for p, l in itertools.product(seqproduto_list, lojas_final_list)
   ]
