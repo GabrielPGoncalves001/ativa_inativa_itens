@@ -74,7 +74,7 @@ if st.button("SALVAR"):
     "SEQPRODUTO":seqproduto_list,
     "LOJAS":[",".join(lojas_final)] * len(seqproduto_list),
     "STATUSCOMPRA":[]*len(seqproduto_list),
-    "STATUSVENDA":"A"
+    "STATUSVENDA":["A"]*len(seqproduto_list)
   })
   
   csv_bytes = df_dados.to_csv(sep=';',encoding='utf-8',index=False).encode()
