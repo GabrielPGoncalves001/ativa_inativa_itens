@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+import itertools
 
 agora = datetime.now().strftime('%d/%m/%Y %H:%M')
 imagem = "https://github.com/GabrielPGoncalves001/ativa_inativa_itens/raw/main/imagem_repo_tutorial.png"
@@ -69,7 +70,16 @@ if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
   
   lojas_final = lojas if lojas else seleciona_lojas
-  
+  lojas_final_list = lojas if isinstance(lojas, list) else [lojas]
+    
+  df_dados =[
+    {"SEQPRODUTO":p,
+    "LOJAS":l,
+    "STATUSCOMPRA":opcao,
+    "STATUSVENDA":"A"}
+  for p, l in itertools.product(seqproduto_list, lojas_final_list)
+  ]
+    
   df_dados = pd.DataFrame({
     "SEQPRODUTO":seqproduto_list,
     "LOJAS":[",".join(lojas_final)] * len(seqproduto_list),
