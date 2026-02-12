@@ -70,8 +70,8 @@ opcao_venda = st.selectbox("Selecione o STATUSVENDA",["ATIVAR","INATIVAR"])
 if st.button("SALVAR"):
   st.write(f'Base Salva em: {agora}')  
 
-  opcao_formatada_compra = "A" if opcao == "ATIVAR" else "I"  
-  opcao_formatada_venda = "A" if opcao == "ATIVAR" else "I"
+  opcao_formatada_compra = "A" if opcao_compra == "ATIVAR" else "I"  
+  opcao_formatada_venda = "A" if opcao_venda == "ATIVAR" else "I"
   lojas_final = lojas if lojas else seleciona_lojas
   lojas_final_list = lojas if isinstance(lojas, list) else [lojas]
     
