@@ -76,14 +76,7 @@ if st.button("SALVAR"):
       opcao_formatada_compra = "I"
   else:
       opcao_formatada_compra = "N"
-      
-  if opcao_venda == "ATIVAR":
-      opcao_formatada_venda = "A"
-  elif opcao_venda == "INATIVAR":
-      opcao_formatada_venda = "I"
-  else:
-      opcao_formatada_venda = "N"
-      
+           
   lojas_final = lojas if lojas else seleciona_lojas
   lojas_final_list = lojas if isinstance(lojas, list) else [lojas]
     
