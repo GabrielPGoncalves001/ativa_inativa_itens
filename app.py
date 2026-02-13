@@ -6,7 +6,7 @@ import itertools
 agora = datetime.now().strftime('%d/%m/%Y %H:%M')
 imagem = "https://github.com/GabrielPGoncalves001/ativa_inativa_itens/raw/main/imagem_repo_tutorial.png"
 
-st.title("Base Ativar/Inativar Itens")
+st.title("Base Ativar/Inativar Itens (COMPRA)")
 
 if st.button("Como utilizar a aplicação"):
     st.image(imagem, caption="Tutorial", use_column_width=True)
